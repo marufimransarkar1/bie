@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Bioinformatics Engineering — BIE-06 · BAU</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            matrixDark: '#020617',
+            matrixBlue: '#1e3a8a',
+            matrixNeon: '#38bdf8',
+          },
+          fontFamily: {
+            mono: ['Space Mono', 'monospace'],
+            sans: ['Syne', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    /* Custom Background Matrix Engine Grid */
+    .blueprint-grid {
+      background-size: 40px 40px;
+      background-image: linear-gradient(to right, rgba(56, 189, 248, 0.05) 1px, transparent 1px),
+                        linear-gradient(to bottom, rgba(56, 189, 248, 0.05) 1px, transparent 1px);
+    }
+    /* Hide scrollbars for custom cursor feel */
+    body {
+      cursor: default;
+    }
+    .custom-cursor {
+      pointer-events: none;
+      transition: transform 0.1s ease;
+    }
+    /* DNA Wave Keyframes */
+    @keyframes dnaFloat {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-10px) rotate(3deg); }
+    }
+    .animate-dna {
+      animation: dnaFloat 6s ease-in-out infinite;
+    }
+  </style>
+</head>
+<body class="bg-matrixDark text-slate-100 font-sans antialiased selection:bg-matrixNeon/30 selection:text-matrixNeon overflow-x-hidden blueprint-grid">
+
+  <div id="preloader" class="fixed inset-0 z-50 bg-matrixDark flex flex-col justify-between p-8 transition-all duration-700 ease-in-out">
+    <div class="w-full flex justify-between text-xs tracking-widest font-mono text-matrixNeon/60">
+      <span>SYSTEM: INITIALIZING</span>
+      <span>BAU // BIE-06</span>
+    </div>
+    <div class="flex flex-col items-start max-w-2xl">
+      <span class="text-sm uppercase tracking-widest text-matrixNeon font-mono mb-2">Bioinformatics Engineering</span>
+      <h2 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-4 text-white">INTERPRETING THE ARCHITECTURE OF LIFE</h2>
+      <div class="w-full bg-slate-800 h-[2px] relative overflow-hidden">
+        <div id="pre-bar" class="absolute top-0 left-0 h-full w-0 bg-matrixNeon transition-all duration-300 ease-out"></div>
+      </div>
+    </div>
+    <div class="w-full flex justify-between items-end font-mono">
+      <span class="text-6xl font-bold text-matrixNeon" id="pre-num">00</span>
+      <span class="text-xs text-slate-500">BATCH '06 COMPILING...</span>
+    </div>
+  </div>
+
+  <div id="cursor" class="hidden md:block fixed w-4 h-4 rounded-full border border-matrixNeon custom-cursor z-50 mix-blend-difference"></div>
+
+  <nav class="fixed top-0 left-0 w-full z-40 border-b border-slate-800/80 bg-matrixDark/80 backdrop-blur-md px-6 py-4 flex justify-between items-center">
+    <div class="flex items-center space-x-3">
+      <div class="w-8 h-8 rounded border border-matrixNeon/50 flex items-center justify-center font-mono text-xs text-matrixNeon bg-matrixNeon/10">BIE</div>
+      <span class="font-mono text-xs tracking-wider uppercase hidden sm:inline">Bangladesh Agricultural University</span>
+    </div>
+    <div class="hidden md:flex space-x-8 text-sm font-mono tracking-wide">
+      <a href="#manifesto" class="hover:text-matrixNeon transition-colors">Manifesto</a>
+      <a href="#roster" class="hover:text-matrixNeon transition-colors">Engineers</a>
+      <a href="#catch" class="hover:text-matrixNeon transition-colors">Sequencer</a>
+    </div>
+    <div>
+      <span class="font-mono text-xs bg-slate-800 border border-slate-700 px-3 py-1 rounded-full text-matrixNeon">Batch '06</span>
+    </div>
+  </nav>
+
+  <section class="min-h-screen pt-24 flex flex-col justify-between p-6 relative overflow-hidden">
+    <div class="absolute inset-0 z-0 bg-[radial-gradient(circle_at_center,rgba(30,58,138,0.15),transparent_60%)]"></div>
+    
+    <div></div> <div class="max-w-6xl mx-auto w-full z-10 grid grid-cols-1 md:grid-cols-2 gap-12 items-center my-auto">
+      <div class="reveal-item">
+        <div class="inline-flex items-center space-x-2 text-matrixNeon font-mono text-xs uppercase tracking-widest mb-4">
+          <span class="w-2 h-2 rounded-full bg-matrixNeon animate-pulse"></span>
+          <span>Now Decoding Architectural Systems</span>
+        </div>
+        <h1 class="text-6xl sm:text-7xl lg:text-8xl font-black tracking-tight uppercase leading-none mb-6">
+          BIE <span class="text-transparent bg-clip-text bg-gradient-to-r from-matrixNeon to-blue-500">06</span>
+        </h1>
+        <p class="text-slate-400 text-lg max-w-md font-mono mb-8">
+          Where computational power intersects biological code. Analyzing sequences, processing life algorithms.
+        </p>
+        <a href="#roster" class="inline-flex items-center space-x-3 bg-matrixNeon text-matrixDark px-6 py-3 font-mono font-bold tracking-wider rounded uppercase hover:bg-white transition-all transform hover:-translate-y-1 shadow-lg shadow-matrixNeon/20">
+          <span>Explore Architecture</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7"></path></svg>
+        </a>
+      </div>
+
+      <div class="relative flex items-center justify-center animate-dna z-10">
+        <div class="w-72 h-72 rounded-full border border-slate-800/80 flex items-center justify-center absolute">
+          <div class="w-56 h-56 rounded-full border border-matrixNeon/20 border-dashed animate-spin" style="animation-duration: 20s;"></div>
+        </div>
+        <div class="text-center font-mono text-[10px] text-matrixNeon/40 p-4 leading-tight tracking-widest max-w-xs break-all select-none">
+          ATG_CGT_GCA_TGC_GGC_TTA_ATT_CAG_GCT_ATC_GGC_TTA_CGA_TTA_TCG_ACT_AGC_GAT_CGA_TCA_GCT_AGC_GAT_CGA_TCA_GCT_AGC_GAT_CGA_TCA_GCT_AGC_GAT_CGA
+        </div>
+        <div class="absolute text-5xl md:text-6xl font-black text-white/10 tracking-widest pointer-events-none select-none font-mono">
+          অনুবর্তন
+        </div>
+      </div>
+    </div>
+
+    <div class="w-full flex flex-col sm:flex-row justify-between items-center border-t border-slate-800/80 pt-6 font-mono text-xs text-slate-500 z-10">
+      <div class="mb-4 sm:mb-0">ENGINEERING DEPT // BANGLADESH AGRICULTURAL UNIVERSITY</div>
+      <div class="flex space-x-6">
+        <div>GENENS: <span class="text-slate-300">ACTG COMPLIANT</span></div>
+        <div>EST: <span class="text-slate-300">2026</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="manifesto" class="py-32 border-y border-slate-800/80 bg-slate-950/40 relative">
+    <div class="max-w-4xl mx-auto px-6">
+      <span class="font-mono text-xs text-matrixNeon tracking-widest uppercase block mb-4">[ 02 / GENETIC MANIFESTO ]</span>
+      <h2 class="text-3xl md:text-5xl font-extrabold tracking-tight mb-8">We are the interpreters of organic logic. Where raw sequence meets evolutionary architecture—there we stand.</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-slate-400 font-mono text-sm">
+        <p>BIE Batch '06 does not merely map data pathways. We decode the foundation layers. Calibrated. Interconnected. Precise. Building interfaces between natural structures and engineering logic structures.</p>
+        <p>A central convergence pipeline dedicated to structural system diagnostics, genetic analytics computation framework engineering, and technology transfer between computational modules and biochemical reality mechanics.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="roster" class="py-32 px-6 max-w-7xl mx-auto">
+    <div class="flex flex-col md:flex-row md:items-end justify-between mb-16">
+      <div>
+        <span class="font-mono text-xs text-matrixNeon tracking-widest uppercase block mb-4">[ 03 / NODE ARCHITECTURE ]</span>
+        <h2 class="text-4xl md:text-5xl font-black uppercase tracking-tight">The Bio-Engineers</h2>
+      </div>
+      <p class="text-slate-500 font-mono text-sm max-w-xs mt-4 md:mt-0">Structural registry mapping of all functional elements inside the BIE-06 array.</p>
+    </div>
+
+    <div id="roster-grid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+      </div>
+  </section>
+
+  <section id="catch" class="py-24 bg-slate-950 border-t border-slate-800/80 px-6 relative">
+    <div class="max-w-xl mx-auto text-center relative z-10">
+      <span class="font-mono text-xs text-matrixNeon tracking-widest uppercase block mb-3">[ 04 / CORE UTILITY ]</span>
+      <h2 class="text-3xl font-extrabold mb-4">Random Element Sequencer</h2>
+      <p class="text-slate-400 font-mono text-xs mb-8">Isolate specific node addresses out of the structural pool arrays seamlessly for pipeline processes.</p>
+      
+      <div class="border border-slate-800 rounded-lg p-6 bg-matrixDark text-left font-mono relative overflow-hidden">
+        <div class="absolute top-0 right-0 p-2 text-[9px] text-slate-600 select-none">MODULE // SEC_06</div>
+        <div class="mb-4">
+          <label class="text-[11px] uppercase tracking-wider text-slate-400 block mb-2">Target Isolation Pool Output:</label>
+          <div id="sequencer-display" class="w-full bg-slate-900 border border-slate-800 text-matrixNeon font-bold text-xl p-4 rounded h-16 flex items-center justify-center text-center transition-all">
+            READY TO RUN
+          </div>
+        </div>
+        <button id="sequencer-trigger" class="w-full bg-matrixNeon/10 border border-matrixNeon/40 hover:bg-matrixNeon hover:text-matrixDark text-matrixNeon transition-all font-bold tracking-widest text-xs py-3 rounded uppercase">
+          EXECUTE RANDOM ISOLATION
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <footer class="border-t border-slate-900 bg-matrixDark py-12 px-6 text-center text-slate-600 font-mono text-xs">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4">
+      <div>© 2026 BIOINFORMATICS ENGINEERING · BIE-06</div>
+      <div class="text-matrixNeon/50">"Interpreting the architecture of life..."</div>
+    </div>
+  </footer>
+
+  <script>
+    // System Core Elements Pool Array from image prompt instructions
+    const engineerNames = [
+      "Muhit", "Soroj", "Sakur", "Rothi", "Minhaz", "Arif", "Atif", "Fahim", 
+      "Mafi", "Apon", "Rukaiya", "Nafis", "Swapnil", "Sorna", "Sorna", "Pitom", 
+      "Rufaida", "Bikash", "Pushpita", "Tamanna", "Rafsan", "Nusrat", "Subarna", 
+      "sorna", "swarna"
+    ];
+
+    // 1. PRELOADER COUNTDOWN MECHANICAL SIMULATION
+    window.addEventListener('DOMContentLoaded', () => {
+      let count = 0;
+      const counterElement = document.getElementById('pre-num');
+      const barElement = document.getElementById('pre-bar');
+      const preloader = document.getElementById('preloader');
+
+      const interval = setInterval(() => {
+        count += Math.floor(Math.random() * 8) + 2;
+        if (count >= 100) {
+          count = 100;
+          clearInterval(interval);
+          setTimeout(() => {
+            preloader.classList.add('opacity-0', 'pointer-events-none');
+          }, 400);
+        }
+        counterElement.innerText = count.toString().padStart(2, '0');
+        barElement.style.width = `${count}%`;
+      }, 45);
+    });
+
+    // 2. HARDWARE INTERACTIVE MOUSE ACCELERATOR RUNNER
+    const cursor = document.getElementById('cursor');
+    document.addEventListener('mousemove', (e) => {
+      cursor.style.left = `${e.clientX - 8}px`;
+      cursor.style.top = `${e.clientY - 8}px`;
+    });
+
+    // 3. GENERATE THE CYBER BLUEPRINT STRUCTURE MATRIX GRID DYNAMICALLY
+    const rosterGrid = document.getElementById('roster-grid');
+    engineerNames.forEach((name, idx) => {
+      const formattedIndex = (idx + 1).toString().padStart(2, '0');
+      const nodeCard = document.createElement('div');
+      nodeCard.className = "border border-slate-800/80 bg-slate-900/20 p-4 rounded hover:border-matrixNeon/40 transition-all duration-300 group relative overflow-hidden flex flex-col justify-between h-28 cursor-pointer hover:bg-slate-900/50";
+      nodeCard.innerHTML = `
+        <div class="flex justify-between items-start">
+          <span class="font-mono text-[10px] text-slate-600 group-hover:text-matrixNeon transition-colors">NODE_${formattedIndex}</span>
+          <span class="w-1.5 h-1.5 rounded-full bg-slate-800 group-hover:bg-matrixNeon transition-all"></span>
+        </div>
+        <div class="font-bold text-base tracking-tight text-slate-200 group-hover:text-white transition-colors truncate capitalize">${name}</div>
+        <div class="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-matrixNeon/30 to-transparent transform -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+      `;
+      rosterGrid.appendChild(nodeCard);
+    });
+
+    // 4. RANDOM SEQUENCER ARRAY EXECUTION ENGINE
+    const seqTrigger = document.getElementById('sequencer-trigger');
+    const seqDisplay = document.getElementById('sequencer-display');
+    let isSequencing = false;
+
+    seqTrigger.addEventListener('click', () => {
+      if (isSequencing) return;
+      isSequencing = true;
+      let iterations = 0;
+      seqDisplay.classList.add('text-white');
+      
+      const sequenceInterval = setInterval(() => {
+        const randomName = engineerNames[Math.floor(Math.random() * engineerNames.length)];
+        seqDisplay.innerText = randomName.toUpperCase();
+        iterations++;
+
+        if (iterations > 15) {
+          clearInterval(sequenceInterval);
+          const finalSelection = engineerNames[Math.floor(Math.random() * engineerNames.length)];
+          seqDisplay.innerText = `🧬 ${finalSelection.toUpperCase()} ISOLATED`;
+          seqDisplay.classList.remove('text-white');
+          isSequencing = false;
+        }
+      }, 75);
+    });
+  </script>
+</body>
+</html>
